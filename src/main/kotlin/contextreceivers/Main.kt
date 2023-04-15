@@ -25,11 +25,12 @@ fun main() {
 
     }
 
-    // code below won't compile because transaction is not in scope
+    // code below won't compile because transaction is not in scope of TX
     // mangaRepository.create("Won't compile :)")
 }
 
 context(TX)
 fun functionWithContextReceiver() {
-    val create = mangaRepository.create("Naruto")
+    println("Hello I'm a function with context receiver, and can use dbQuery!")
+    mangaRepository.create("Naruto")
 }

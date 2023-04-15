@@ -3,10 +3,8 @@ package contextreceivers
 data class MangaInfo(val id: Int, val title: String)
 
 interface MangaRepository {
-
     context(TX) fun create(title: String): Int
     context(TX) fun findAll(): List<MangaInfo>
-
 }
 
 fun mangaRepository() = object : MangaRepository {
